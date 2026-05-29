@@ -24,6 +24,7 @@ const connectWallet = async () => {
           <span>Vaults</span>
           <span>Yield</span>
           <span>Security</span>
+          <a href="#roadmap">Roadmap</a>
         </div>
         <button className="navBtn" onClick={connectWallet}>
   {wallet
@@ -55,7 +56,9 @@ const connectWallet = async () => {
 
           <div className="actions">
             <button>Launch Coming Soon</button>
-            <button className="secondary">View Roadmap</button>
+            <a href="#roadmap" className="secondary">
+              View Roadmap
+              </a>
           </div>
         </div>
 
@@ -102,6 +105,24 @@ const connectWallet = async () => {
           <p>Smart contract deployed on OPN Chain for builder verification.</p>
         </div>
       </section>
+      <section id="roadmap" className="roadmap">
+  <h2>Roadmap</h2>
+
+  <div className="roadmapCard">
+    <h3>Q2 2026</h3>
+    <p>Launch OPNVault Beta on OPN Testnet</p>
+  </div>
+
+  <div className="roadmapCard">
+    <h3>Q3 2026</h3>
+    <p>Introduce staking rewards and analytics dashboard</p>
+  </div>
+
+  <div className="roadmapCard">
+    <h3>Q4 2026</h3>
+    <p>Cross-chain vault integration and OPN mainnet support</p>
+  </div>
+</section>
     </main>
   );
 }
