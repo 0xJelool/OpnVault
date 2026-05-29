@@ -1,6 +1,21 @@
- import "./App.css";
+ import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [wallet, setWallet] = useState("")
+
+const connectWallet = async () => {
+  if (!window.ethereum) {
+    alert("Install MetaMask or Rabby")
+    return
+  }
+
+  const accounts = await window.ethereum.request({
+    method: "eth_requestAccounts",
+  })
+
+  setWallet(accounts[0])
+}
   return (
     <main className="page">
       <nav className="nav">
@@ -10,7 +25,11 @@ function App() {
           <span>Yield</span>
           <span>Security</span>
         </div>
-        <button className="navBtn">Coming Soon</button>
+        <button className="navBtn" onClick={connectWallet}>
+  {wallet
+    ? `${wallet.slice(0,6)}...${wallet.slice(-4)}`
+    : "Connect Wallet"}
+</button>
       </nav>
 
       <section className="hero">
